@@ -1,11 +1,10 @@
 name: Deploy ToDo Application
 
 on:
-    push:
-      branches:
-        - main
-  
-  jobs:
+  push:
+    branches:
+      - main
+jobs:
     build:
       runs-on: ubuntu-latest
   
