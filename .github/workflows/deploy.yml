@@ -46,6 +46,7 @@ jobs:
           sudo apt-get install -y sshpass
           sshpass -p "${{ secrets.PASSWORD }}" ssh -tt -o StrictHostKeyChecking=no -p ${{ secrets.PORT }} ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
           cd /home/namxal/ToDo-Server
+          ls -l
           docker-compose down
           docker-compose pull
           docker-compose up -d
