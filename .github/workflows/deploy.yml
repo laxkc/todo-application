@@ -38,7 +38,7 @@ jobs:
       - name: Deploy to Ubuntu Server
     #   - uses: azure/login@v1
       - uses: azure/login@v1
-        env:
+        with:
           HOST: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
