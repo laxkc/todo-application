@@ -38,7 +38,7 @@ jobs:
       - name: Deploy to Ubuntu Server
     #   - uses: azure/login@v1
       - uses: azure/login@v1
-        with:
+        env:
           HOST: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
@@ -49,7 +49,7 @@ jobs:
           sshpass -p "${{ secrets.PASSWORD }}" ssh -tt -o StrictHostKeyChecking=no -p ${{ secrets.PORT }} ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
           cd /home/namxal/ToDo-Server
           ls -l
-          docker-compose down
-          docker-compose pull
-          docker-compose up -d
+          sudo docker-compose down
+          sudo docker-compose pull
+          sudo docker-compose up -d
           EOF
